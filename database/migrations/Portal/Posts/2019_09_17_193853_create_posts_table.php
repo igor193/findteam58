@@ -24,7 +24,7 @@ class CreatePostsTable extends Migration
         });
 
         Schema::table('posts', function (Blueprint $table) {
-            $table->integer('user_id')
+            $table->bigInteger('user_id')
                 ->unsigned()
                 ->change();
             $table->foreign('user_id')
