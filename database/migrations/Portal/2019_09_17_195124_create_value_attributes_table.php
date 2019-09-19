@@ -15,6 +15,14 @@ class CreateValueAttributesTable extends Migration
     {
         Schema::create('valueAttributes', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('attribute_id')
+                ->unsigned();
+            $table->foreign('attribute_id')
+                ->references('id')
+                ->on('attributes')
+                ->onDelete('cascade');
+            $table->string('type1');
+            $table->bigInteger('type2');
             $table->timestamps();
         });
     }

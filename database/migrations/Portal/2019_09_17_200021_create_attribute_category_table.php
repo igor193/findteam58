@@ -14,8 +14,18 @@ class CreateAttributeCategoryTable extends Migration
     public function up()
     {
         Schema::create('attribute_category', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->timestamps();
+            $table->bigInteger('category_id')
+                ->unsigned();
+            $table->bigInteger('attribute_id')
+                 ->unsigned();
+            $table->foreign('category_id')
+                ->references('id')
+                ->on('categories')
+                ->onDelete('cascade');
+            $table->foreign('attribute_id')
+                ->references('id')
+                ->on('attributes')
+                ->onDelete('cascade');
         });
     }
 
