@@ -6,8 +6,9 @@ use App\Models\Portal\Post;
 use Faker\Generator as Faker;
 
 $factory->define(Post::class, function (Faker $faker) {
+    $title = $faker->sentence(2);
     return [
-        'topic' => $faker->sentence(1),
+        'topic' => $title,
         'slug' => $faker->slug,
         'entry' => $faker->text(200),
         'body' => $faker->text(600),
