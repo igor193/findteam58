@@ -13,9 +13,15 @@ class CategoryPostTableSeeder extends Seeder
      */
     public function run()
     {
-        
-        $postsList = Post::find(1);
-        $postsList->categories()
-        ->attach(5);
+        $postIds = Post::all()->pluck('id')->toArray();
+
+        foreach ($postIds as $postId) {
+            $categoryNumber = rand(1, 6);
+            $postsList = Post::find($postId);
+            $postsList->categories()
+                ->attach($categoryNumber);
+        }
+
+
     }
 }

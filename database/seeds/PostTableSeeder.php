@@ -11,14 +11,14 @@ class PostTableSeeder extends Seeder
      */
     public function run()
     {
-        $userId = factory(App\User::class, 5)->create()->pluck('id')->toArray();
-        
+       // $userId = factory(App\User::class, 5)->create()->pluck('id')->toArray();
+
          factory(App\User::class, 5)
             ->create()->each(function($user) {
                $user->post()
                    ->saveMany(factory(App\Models\Portal\Post::class, 10)
                    ->make());
         });
-        
+
     }
 }

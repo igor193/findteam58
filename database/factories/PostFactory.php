@@ -9,9 +9,10 @@ $factory->define(Post::class, function (Faker $faker) {
     $title = $faker->sentence(2);
     return [
         'topic' => $title,
-        'slug' => $faker->word,
+        'slug' => $faker->slug,
         'entry' => $faker->text(200),
         'body' => $faker->text(600),
+        'city' => $faker->city,
         'publication' => $faker->boolean
     ];
 });

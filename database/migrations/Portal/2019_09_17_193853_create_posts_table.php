@@ -20,6 +20,7 @@ class CreatePostsTable extends Migration
             $table->string('slug')->unique();
             $table->text('entry', 400);
             $table->text('body');
+            $table->string('city');
             $table->boolean('publication')->default(false);
             $table->timestamps();
         });
