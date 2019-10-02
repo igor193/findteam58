@@ -12,11 +12,11 @@ class Post extends Model
         return $this->belongsTo("App\User");
     }
 
-    public function categories() {
+    public function category() {
         return $this->belongsToMany("App\Models\Portal\Category");
     }
 
-    public function comment() {
+    public function comments() {
         return $this->hasMany("App\Models\Portal\Comment");
     }
 }

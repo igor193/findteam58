@@ -8,7 +8,7 @@ class Attribute extends Model
 {
     protected $fillable = ["name", "slug"];
 
-    public function categories() {
+    public function category() {
         return $this->belongsToMany("App\Models\Portal\Category");
     }
 }

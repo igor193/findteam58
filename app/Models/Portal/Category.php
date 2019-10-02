@@ -8,11 +8,11 @@ class Category extends Model
 {
     protected $fillable = ["slug", "name"];
 
-    public function posts() {
+    public function post() {
         return $this->belongsToMany("App\Models\Post");
     }
 
-    public function attributes() {
+    public function attribute() {
         return $this->belongsToMany("App\Models\Attribute");
     }
 }
