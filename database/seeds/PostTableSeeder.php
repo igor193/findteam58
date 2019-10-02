@@ -1,5 +1,6 @@
 <?php
 
+
 use Illuminate\Database\Seeder;
 
 class PostTableSeeder extends Seeder
@@ -15,7 +16,7 @@ class PostTableSeeder extends Seeder
 
          factory(App\User::class, 5)
             ->create()->each(function($user) {
-               $user->post()
+               $user->posts()
                    ->saveMany(factory(App\Models\Portal\Post::class, 10)
                    ->make());
         });

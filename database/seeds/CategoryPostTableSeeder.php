@@ -18,7 +18,7 @@ class CategoryPostTableSeeder extends Seeder
         foreach ($postIds as $postId) {
             $categoryNumber = rand(1, 6);
             $postsList = Post::find($postId);
-            $postsList->categories()
+            $postsList->category()
                 ->attach($categoryNumber);
         }
 
